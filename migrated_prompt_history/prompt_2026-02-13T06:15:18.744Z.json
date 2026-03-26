@@ -1,0 +1,247 @@
+[
+  {
+    "id": 0,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "# Role\nYou are an expert SEO Content Specialist and Web Developer for Filmora's Brazilian Portuguese market (BR). Your task is to optimize a resource aggregation page based on specific inputs.\n\n# Inputs Provided by User\n1. **Original HTML Content:** The raw HTML code of the page.\n2. **Modification Requirements:** Specific instructions on what to change (e.g., \"Change video context to image context\", \"Focus on Gemini prompts\").\n3. **Target Keywords:** High-traffic/low-competition keywords to integrate.\n\n# Instructions & Constraints\n\n## Step 1: URL Creation\n- Create a SEO-friendly URL slug based on the main topic and keywords with an objective to improve the clicks as much as possible \n- Format: lowercase, hyphen-separated (e.g., `keyword-principal-secundario.html`).\n- Structure: Keep it under the appropriate directory (e.g., `/ai-image/` or `/ai-prompt/` based on context).\n\n## Step 2: Title & Meta Generation\n- **Title H1:** Must exist in the HTML. Create a compelling H1 using the main keyword.\n- **Browser Title:** \n  - Max 60 characters.\n  - MUST include the highest value keyword.\n  - **Constraint:** Do NOT mention \"Filmora\" unless explicitly asked.\n  - **Requirement:** Mention specific technology (e.g., \"Gemini\", \"AI\") if requested in requirements.\n  - Focus on \"Grátis\" (Free) or \"Online\" if applicable to boost CTR.\n- **Meta Description:**\n  - Max 160 characters.\n  - Summarize the value proposition.\n  - Include secondary keywords naturally.\n  - End with a Call to Action (CTA).\n\n## Step 3: Content & HTML Modification\n- **Contextual Rewrite:** strict execution of the \"Modification Requirements\". \n  - *Example:* If the requirement is \"Video to Image\", you must replace terms like \"criar videos\", \"edição de vídeo\", \"clips\" with \"criar imagens\", \"gerar fotos\", \"artes\", \"design\", but if the requirement is to keep video as the same then not need to replace\n  - **Crucial:** You must fix Portuguese grammar (Gender/Number agreement) when changing terms (e.g., \"o vídeo novo\" becomes \"a imagem nova\").\n- **Keyword Integration:** Natural insertion of the provided \"Target Keywords\" into H1, H2, Paragraphs (<p>), and Alt texts.\n- **Code Integrity:** \n  - DO NOT change the HTML structure (divs, classes, ids). \n  - DO NOT remove CSS links or scripts.\n  - Only modify the text content and strictly necessary attributes (like links/hrefs if requested).\n- **Language:** Brazilian Portuguese (pt-BR).\n\n# Output Format\nPlease output the result in the following structured format:\n\n## 1. URL Suggestion\n[Insert URL here]\n\n## 2. SEO Assets\n**Browser Title:** [Insert Title]\n**Meta Description:** [Insert Meta]\n\n## 3. Modified HTML Code\n```html\n[Insert the full, modified HTML code here] ",
+      "files": [],
+      "fileUploads": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770880052,
+      "nanos": 622000000
+    }
+  },
+  {
+    "id": 1,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Analyzing Optimization Requirements**\n\nI'm currently focused on defining the exact modifications needed for the resource aggregation page. I'm considering the existing HTML content (implied, as it's not provided) and working to clarify the optimization goals, although the specific requirements are not fully detailed. I need to take action based on the information I have.\n\n\n**Interpreting User Intent**\n\nI've re-evaluated the apparent conflicting instructions in this prompt, focusing on the ultimate goal: building a React application. My understanding is now that I'm supposed to construct a React application based on the instructions for an SEO tool, essentially building the SEO tool itself. The `metadata.json` file requirement reinforces this. I'm focusing on the React application component design to achieve this.\n\n\n**Defining Application Architecture**\n\nI'm now outlining the application's core architecture. The \"Filmora SEO Optimizer\" landing page will be the focal point. I envision separate input sections for HTML, modification requirements, and keywords. I need to integrate the Gemini API for processing and then display the results. I'm focusing on the component structure: input fields, API interaction, and output displays.\n\n\n**Designing UI Components**\n\nI'm now focusing on UI implementation, aiming for a professional look with a Filmora-inspired color scheme and Tailwind. I'm actively working with `metadata.json`, `index.html`, `index.tsx`, `App.tsx`, and the service layer in `services/gemini.ts`. The planned components are `Layout.tsx`, `Editor.tsx`, and `ResultsView.tsx`. I have also considered the data structures outlined in `types.ts` to ensure everything operates smoothly.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770880052,
+      "nanos": 622000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770880063,
+      "nanos": 540000000
+    }
+  },
+  {
+    "id": 2,
+    "author": "model",
+    "payload": {
+      "type": "generationTable",
+      "entries": [
+        {
+          "path": "metadata.json",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Application metadata and description.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n{\n  \"name\": \"Filmora BR SEO Optimizer\",\n  \"description\": \"An advanced SEO tool designed for the Brazilian Filmora market to optimize HTML content, generate metadata, and rewrite contextual elements based on target keywords and specific requirements.\"\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "index.html",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main HTML entry point with Tailwind CSS and Font configuration.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\n<!DOCTYPE html>\n<html lang=\"pt-BR\">\n<head>\n    <meta charset=\"UTF-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">\n    <title>Filmora BR SEO Optimizer</title>\n    <script src=\"https://cdn.tailwindcss.com\"></script>\n    <link rel=\"preconnect\" href=\"https://fonts.googleapis.com\">\n    <link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin>\n    <link href=\"https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap\" rel=\"stylesheet\">\n    <style>\n        body {\n            font-family: 'Inter', sans-serif;\n            background-color: #0f172a;\n            color: #f8fafc;\n        }\n        .custom-scrollbar::-webkit-scrollbar {\n            width: 8px;\n        }\n        .custom-scrollbar::-webkit-scrollbar-track {\n            background: #1e293b;\n        }\n        .custom-scrollbar::-webkit-scrollbar-thumb {\n            background: #334155;\n            border-radius: 4px;\n        }\n        .custom-scrollbar::-webkit-scrollbar-thumb:hover {\n            background: #475569;\n        }\n    </style>\n</head>\n<body>\n    <div id=\"root\"></div>\n</body>\n</html>\n"
+            }
+          ]
+        },
+        {
+          "path": "types.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Global TypeScript interfaces and types.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nexport interface SEOOutput {\n  url: string;\n  browserTitle: string;\n  metaDescription: string;\n  modifiedHtml: string;\n}\n\nexport interface OptimizationRequest {\n  originalHtml: string;\n  requirements: string;\n  keywords: string;\n}\n"
+            }
+          ]
+        },
+        {
+          "path": "services/geminiService.ts",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Service to interact with Gemini API for SEO content optimization.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport { GoogleGenAI, Type } from \"@google/genai\";\nimport { SEOOutput, OptimizationRequest } from \"../types\";\n\nconst ai = new GoogleGenAI({ apiKey: process.env.API_KEY });\n\nexport const optimizeContent = async (req: OptimizationRequest): Promise<SEOOutput> => {\n  const prompt = `\n    Role: Expert SEO Content Specialist for Filmora's Brazilian Portuguese market (BR).\n    \n    Task: Optimize the provided HTML content based on specific requirements and target keywords.\n    \n    Inputs:\n    1. Original HTML: ${req.originalHtml}\n    2. Modification Requirements: ${req.requirements}\n    3. Target Keywords: ${req.keywords}\n    \n    Instructions:\n    - URL Creation: Create a click-driven SEO slug (lowercase, hyphen-separated).\n    - Browser Title: Max 60 chars. Must include highest value keyword. No \"Filmora\" unless asked. Mention tech like Gemini/AI if requested. Use \"Grátis\" or \"Online\" if applicable.\n    - Meta Description: Max 160 chars. Natural keywords. End with CTA.\n    - H1: Compelling H1 in the HTML using the main keyword.\n    - Contextual Rewrite: If req says \"Video to Image\", swap context. Fix Portuguese grammar (Gender/Number agreement).\n    - Keyword Integration: Natural insertion in H1, H2, <p>, and Alt texts.\n    - Code Integrity: DO NOT change structure (divs, classes, ids). DO NOT remove CSS/Scripts.\n    - Language: MUST be Brazilian Portuguese (pt-BR).\n  `;\n\n  const response = await ai.models.generateContent({\n    model: 'gemini-3-flash-preview',\n    contents: prompt,\n    config: {\n      responseMimeType: \"application/json\",\n      responseSchema: {\n        type: Type.OBJECT,\n        properties: {\n          url: { type: Type.STRING },\n          browserTitle: { type: Type.STRING },\n          metaDescription: { type: Type.STRING },\n          modifiedHtml: { type: Type.STRING },\n        },\n        required: [\"url\", \"browserTitle\", \"metaDescription\", \"modifiedHtml\"],\n      },\n    },\n  });\n\n  const text = response.text;\n  if (!text) throw new Error(\"No response from AI\");\n  return JSON.parse(text.trim()) as SEOOutput;\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "components/InputSection.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Component for user inputs (HTML, Requirements, Keywords).",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\n\ninterface InputSectionProps {\n  html: string;\n  setHtml: (v: string) => void;\n  reqs: string;\n  setReqs: (v: string) => void;\n  keywords: string;\n  setKeywords: (v: string) => void;\n  isOptimizing: boolean;\n  onOptimize: () => void;\n}\n\nexport const InputSection: React.FC<InputSectionProps> = ({\n  html, setHtml, reqs, setReqs, keywords, setKeywords, isOptimizing, onOptimize\n}) => {\n  return (\n    <div className=\"flex flex-col gap-6 p-6 bg-slate-900 border-r border-slate-800 h-full overflow-y-auto custom-scrollbar\">\n      <div className=\"flex items-center gap-2 mb-2\">\n        <div className=\"w-2 h-8 bg-teal-500 rounded-full\"></div>\n        <h2 className=\"text-xl font-bold text-white tracking-tight\">Otimizador de Conteúdo SEO</h2>\n      </div>\n\n      <div className=\"space-y-4\">\n        <div>\n          <label className=\"block text-sm font-medium text-slate-400 mb-1.5 uppercase tracking-wider\">\n            Código HTML Original\n          </label>\n          <textarea\n            value={html}\n            onChange={(e) => setHtml(e.target.value)}\n            className=\"w-full h-64 bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-200 font-mono text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all placeholder-slate-600\"\n            placeholder=\"Cole seu HTML aqui...\"\n          />\n        </div>\n\n        <div>\n          <label className=\"block text-sm font-medium text-slate-400 mb-1.5 uppercase tracking-wider\">\n            Requisitos de Modificação\n          </label>\n          <textarea\n            value={reqs}\n            onChange={(e) => setReqs(e.target.value)}\n            className=\"w-full h-24 bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-200 text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all placeholder-slate-600\"\n            placeholder=\"Ex: Mudar contexto de vídeo para imagem, focar em Gemini prompts...\"\n          />\n        </div>\n\n        <div>\n          <label className=\"block text-sm font-medium text-slate-400 mb-1.5 uppercase tracking-wider\">\n            Keywords Alvo\n          </label>\n          <input\n            type=\"text\"\n            value={keywords}\n            onChange={(e) => setKeywords(e.target.value)}\n            className=\"w-full bg-slate-800 border border-slate-700 rounded-lg p-3 text-slate-200 text-sm focus:ring-2 focus:ring-teal-500 focus:border-transparent outline-none transition-all placeholder-slate-600\"\n            placeholder=\"Ex: gerador de imagem ai, criar arte digital gratis\"\n          />\n        </div>\n      </div>\n\n      <button\n        onClick={onOptimize}\n        disabled={isOptimizing || !html || !reqs || !keywords}\n        className={`mt-4 py-4 px-6 rounded-xl font-bold text-lg flex items-center justify-center gap-2 transition-all duration-300 ${\n          isOptimizing \n          ? \"bg-slate-700 cursor-not-allowed text-slate-500\" \n          : \"bg-gradient-to-r from-teal-500 to-emerald-600 hover:from-teal-400 hover:to-emerald-500 text-white shadow-lg shadow-teal-500/20 active:scale-95\"\n        }`}\n      >\n        {isOptimizing ? (\n          <>\n            <svg className=\"animate-spin h-5 w-5 text-white\" xmlns=\"http://www.w3.org/2000/svg\" fill=\"none\" viewBox=\"0 0 24 24\">\n              <circle className=\"opacity-25\" cx=\"12\" cy=\"12\" r=\"10\" stroke=\"currentColor\" strokeWidth=\"4\"></circle>\n              <path className=\"opacity-75\" fill=\"currentColor\" d=\"M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z\"></path>\n            </svg>\n            Otimizando...\n          </>\n        ) : (\n          \"Otimizar Agora\"\n        )}\n      </button>\n    </div>\n  );\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "components/ResultsSection.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Component for displaying optimization results.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React, { useState } from 'react';\nimport { SEOOutput } from '../types';\n\ninterface ResultsSectionProps {\n  result: SEOOutput | null;\n}\n\nexport const ResultsSection: React.FC<ResultsSectionProps> = ({ result }) => {\n  const [activeTab, setActiveTab] = useState<'code' | 'preview'>('code');\n\n  if (!result) {\n    return (\n      <div className=\"flex flex-col items-center justify-center h-full text-slate-500 p-12 bg-slate-950\">\n        <svg xmlns=\"http://www.w3.org/2000/svg\" className=\"h-16 w-16 mb-4 opacity-20\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\">\n          <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={1.5} d=\"M19 20H5a2 2 0 01-2-2V6a2 2 0 012-2h10l4 4v10a2 2 0 01-2 2z\" />\n          <path strokeLinecap=\"round\" strokeLinejoin=\"round\" strokeWidth={1.5} d=\"M14 2v6h6M8 12h8m-8 4h5\" />\n        </svg>\n        <p className=\"text-xl font-medium\">Pronto para otimizar</p>\n        <p className=\"text-sm mt-2 max-w-xs text-center\">Insira os dados à esquerda e clique em \"Otimizar Agora\" para gerar os ativos SEO.</p>\n      </div>\n    );\n  }\n\n  const copyToClipboard = (text: string) => {\n    navigator.clipboard.writeText(text);\n    alert(\"Copiado com sucesso!\");\n  };\n\n  return (\n    <div className=\"flex flex-col h-full bg-slate-950 overflow-hidden\">\n      <div className=\"p-6 border-b border-slate-800 bg-slate-900/50 backdrop-blur-md\">\n        <h3 className=\"text-sm font-bold text-teal-400 uppercase tracking-widest mb-4\">Ativos Gerados</h3>\n        <div className=\"grid grid-cols-1 md:grid-cols-2 gap-4\">\n          <div className=\"bg-slate-800 p-4 rounded-xl border border-slate-700\">\n            <div className=\"flex justify-between items-center mb-2\">\n              <span className=\"text-xs font-semibold text-slate-400\">Sugestão de URL</span>\n              <button onClick={() => copyToClipboard(result.url)} className=\"text-teal-500 hover:text-teal-400 text-xs font-bold\">COPIAR</button>\n            </div>\n            <p className=\"text-sm text-white font-mono break-all\">{result.url}</p>\n          </div>\n          <div className=\"bg-slate-800 p-4 rounded-xl border border-slate-700\">\n            <div className=\"flex justify-between items-center mb-2\">\n              <span className=\"text-xs font-semibold text-slate-400\">Browser Title</span>\n              <button onClick={() => copyToClipboard(result.browserTitle)} className=\"text-teal-500 hover:text-teal-400 text-xs font-bold\">COPIAR</button>\n            </div>\n            <p className=\"text-sm text-white font-medium\">{result.browserTitle}</p>\n          </div>\n          <div className=\"bg-slate-800 p-4 rounded-xl border border-slate-700 md:col-span-2\">\n            <div className=\"flex justify-between items-center mb-2\">\n              <span className=\"text-xs font-semibold text-slate-400\">Meta Description</span>\n              <button onClick={() => copyToClipboard(result.metaDescription)} className=\"text-teal-500 hover:text-teal-400 text-xs font-bold\">COPIAR</button>\n            </div>\n            <p className=\"text-sm text-slate-300 italic\">\"{result.metaDescription}\"</p>\n          </div>\n        </div>\n      </div>\n\n      <div className=\"flex-1 overflow-hidden flex flex-col\">\n        <div className=\"flex items-center gap-4 px-6 pt-4\">\n          <button \n            onClick={() => setActiveTab('code')}\n            className={`pb-3 text-sm font-bold tracking-wide transition-all border-b-2 ${activeTab === 'code' ? 'border-teal-500 text-teal-500' : 'border-transparent text-slate-500 hover:text-slate-300'}`}\n          >\n            CÓDIGO MODIFICADO\n          </button>\n          <button \n            onClick={() => setActiveTab('preview')}\n            className={`pb-3 text-sm font-bold tracking-wide transition-all border-b-2 ${activeTab === 'preview' ? 'border-teal-500 text-teal-500' : 'border-transparent text-slate-500 hover:text-slate-300'}`}\n          >\n            PRÉ-VISUALIZAÇÃO\n          </button>\n        </div>\n\n        <div className=\"flex-1 overflow-auto custom-scrollbar p-6\">\n          {activeTab === 'code' ? (\n            <div className=\"relative\">\n              <button \n                onClick={() => copyToClipboard(result.modifiedHtml)}\n                className=\"absolute top-2 right-2 bg-slate-700 hover:bg-slate-600 text-white px-3 py-1 rounded text-xs font-bold transition-colors z-10\"\n              >\n                COPIAR TUDO\n              </button>\n              <pre className=\"bg-slate-900 p-6 rounded-xl border border-slate-800 text-xs font-mono text-emerald-400 overflow-x-auto whitespace-pre-wrap leading-relaxed shadow-inner\">\n                {result.modifiedHtml}\n              </pre>\n            </div>\n          ) : (\n            <div className=\"bg-white rounded-xl h-full shadow-2xl overflow-hidden border border-slate-700\">\n               <iframe \n                srcDoc={result.modifiedHtml} \n                className=\"w-full h-full border-none\"\n                title=\"Preview\"\n              />\n            </div>\n          )}\n        </div>\n      </div>\n    </div>\n  );\n};\n"
+            }
+          ]
+        },
+        {
+          "path": "App.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "Main application component managing state and layout.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React, { useState } from 'react';\nimport { InputSection } from './components/InputSection';\nimport { ResultsSection } from './components/ResultsSection';\nimport { optimizeContent } from './services/geminiService';\nimport { SEOOutput } from './types';\n\nconst App: React.FC = () => {\n  const [html, setHtml] = useState('');\n  const [reqs, setReqs] = useState('');\n  const [keywords, setKeywords] = useState('');\n  const [result, setResult] = useState<SEOOutput | null>(null);\n  const [isOptimizing, setIsOptimizing] = useState(false);\n  const [error, setError] = useState<string | null>(null);\n\n  const handleOptimize = async () => {\n    setIsOptimizing(true);\n    setError(null);\n    try {\n      const data = await optimizeContent({\n        originalHtml: html,\n        requirements: reqs,\n        keywords: keywords\n      });\n      setResult(data);\n    } catch (err) {\n      console.error(err);\n      setError(\"Falha ao otimizar o conteúdo. Verifique sua chave de API e tente novamente.\");\n    } finally {\n      setIsOptimizing(false);\n    }\n  };\n\n  return (\n    <div className=\"flex flex-col lg:flex-row h-screen bg-slate-950 overflow-hidden\">\n      {/* Sidebar - Inputs */}\n      <div className=\"w-full lg:w-[400px] xl:w-[500px] flex-shrink-0 h-1/2 lg:h-full\">\n        <InputSection \n          html={html}\n          setHtml={setHtml}\n          reqs={reqs}\n          setReqs={setReqs}\n          keywords={keywords}\n          setKeywords={setKeywords}\n          isOptimizing={isOptimizing}\n          onOptimize={handleOptimize}\n        />\n      </div>\n\n      {/* Main Panel - Results */}\n      <div className=\"flex-1 h-1/2 lg:h-full relative\">\n        {error && (\n          <div className=\"absolute top-4 left-1/2 -translate-x-1/2 z-50 bg-rose-500/20 border border-rose-500/50 text-rose-200 px-6 py-3 rounded-lg backdrop-blur-md shadow-2xl flex items-center gap-3\">\n            <svg xmlns=\"http://www.w3.org/2000/svg\" className=\"h-5 w-5\" viewBox=\"0 0 20 20\" fill=\"currentColor\">\n              <path fillRule=\"evenodd\" d=\"M10 18a8 8 0 100-16 8 8 0 000 16zM8.707 7.293a1 1 0 00-1.414 1.414L8.586 10l-1.293 1.293a1 1 0 101.414 1.414L10 11.414l1.293 1.293a1 1 0 001.414-1.414L11.414 10l1.293-1.293a1 1 0 00-1.414-1.414L10 8.586 8.707 7.293z\" clipRule=\"evenodd\" />\n            </svg>\n            <span className=\"text-sm font-medium\">{error}</span>\n          </div>\n        )}\n        <ResultsSection result={result} />\n      </div>\n    </div>\n  );\n};\n\nexport default App;\n"
+            }
+          ]
+        },
+        {
+          "path": "index.tsx",
+          "generationType": 0,
+          "isDone": true,
+          "description": "React DOM entry point.",
+          "diffs": [
+            {
+              "target": "",
+              "replacement": "\nimport React from 'react';\nimport ReactDOM from 'react-dom/client';\nimport App from './App';\n\nconst rootElement = document.getElementById('root');\nif (!rootElement) {\n  throw new Error(\"Could not find root element to mount to\");\n}\n\nconst root = ReactDOM.createRoot(rootElement);\nroot.render(\n  <React.StrictMode>\n    <App />\n  </React.StrictMode>\n);\n"
+            }
+          ]
+        }
+      ]
+    },
+    "createdTimestamp": {
+      "seconds": 1770880063,
+      "nanos": 540000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770880064,
+      "nanos": 206000000
+    }
+  },
+  {
+    "id": 3,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "总结下这个工具资源页面seo优化工具 Filmora BR SEO Optimizer\n\n的prompt以便我可以在其他app生成器里面生成一模一样的工具",
+      "files": [],
+      "fileUploads": [],
+      "cssBlocks": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963186,
+      "nanos": 784000000
+    }
+  },
+  {
+    "id": 4,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Replicating the Filmora SEO Tool**\n\nI'm now focused on distilling the Filmora SEO Optimizer's core functionality, specifically for the Brazilian Portuguese market. My goal is to craft a prompt that can be seamlessly integrated into other AI app generators to create an exact replica of the tool. I'm prioritizing accuracy in the prompt's language and function.\n\n\n**Analyzing the UI/UX**\n\nI'm now diving deep into the UI/UX specs. I've broken it down into actionable steps. First, there's the core system instruction defining the AI's role and logic. Then, I'm identifying the tech stack, settling on React, Tailwind CSS, and the Gemini API. Finally, I’m working on the user interface, aiming for a two-pane layout with input and output sections. The aim is a modern dark theme and specific font choices.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963186,
+      "nanos": 784000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770963192,
+      "nanos": 222000000
+    }
+  },
+  {
+    "id": 5,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "为了在其他 AI 应用生成器（如 Cursor, Lovable, Bolt, Replit Agent 等）中完美复现这个 **Filmora BR SEO Optimizer**，你需要一个结构清晰、逻辑严密的提示词（Prompt）。\n\n以下是为你整理的系统级 Prompt，分为 **角色定义**、**功能逻辑**、**UI/UX 设计** 和 **核心规则** 四个部分：\n\n---\n\n### 🚀 Filmora BR SEO Optimizer 生成提示词 (Prompt)\n\n**Role (角色):**\n你是一名世界顶级的资深前端工程师，同时也是针对巴西葡萄牙语（pt-BR）市场的资深 SEO 专家。你的任务是创建一个名为 \"Filmora BR SEO Optimizer\" 的 Web 应用，专门用于为 Filmora 品牌优化资源页面的 HTML 内容。\n\n**Core Functionality (核心功能):**\n该应用需要集成 Google Gemini API，通过一个简洁的双栏界面处理以下流程：\n1. **输入阶段**: 接收原始 HTML 代码、修改需求（如从视频转换到图片上下文）以及目标关键词。\n2. **处理阶段**: 使用 AI 按照巴西 SEO 最佳实践优化内容。\n3. **输出阶段**: 生成优化的 URL 路径名、浏览器标题 (Browser Title)、元描述 (Meta Description) 以及修改后的完整 HTML。\n\n**UI/UX Specification (界面规范):**\n*   **风格**: 极简现代的深色模式 (Dark Theme)，主色调使用 Slate-900/950，点缀色使用 Teal (青色)。\n*   **布局**: \n    *   **左侧边栏 (400px-500px)**: 包含三个输入框（HTML 文本域、需求文本域、关键词输入框）和一个醒目的“Otimizar Agora”渐变按钮。\n    *   **右侧主面板**: 顶部显示生成的元数据卡片（URL、Title、Description），下方提供两个选项卡（Tabs）：“CÓDIGO MODIFICADO”（代码视图，带语法高亮感觉）和“PRÉ-VISUALIZAÇÃO”（实时 iframe 预览）。\n*   **交互**: 必须包含一键复制功能、加载动画状态、以及优雅的滚动条设计。使用 Inter 字体。\n\n**Technical Requirements (技术要求):**\n*   **Stack**: React, Tailwind CSS, TypeScript.\n*   **AI Logic (关键指令)**:\n    *   **语言**: 所有生成的内容必须是纯正的巴西葡萄牙语 (pt-BR)。\n    *   **SEO 规则**: \n        *   URL: 小写，中划线分隔，高点击驱动。\n        *   Title: 最多 60 字符，包含高价值关键词，除非要求否则不带 \"Filmora\" 字样。\n        *   Meta Description: 最多 160 字符，自然嵌入关键词，以 CTA (呼吁行动) 结尾。\n        *   HTML 修改: 优化 H1/H2 标签，自然插入关键词，修复葡语语法（性别/数量一致性），严禁修改原始 HTML 的 div 结构、class 类名或脚本链接。\n    *   **API**: 使用 `@google/genai` 库，模型指定为 `gemini-3-flash-preview`。\n\n**Response Schema (数据格式):**\nAI 必须返回严格的 JSON 格式，包含：`url`, `browserTitle`, `metaDescription`, `modifiedHtml`。\n\n---\n\n### 如何使用这个 Prompt？\n\n1.  **在 Cursor 或 Bolt.new 中**: 直接复制上面的内容，开头加上 \"Create a React application with the following specs:\" 即可。\n2.  **在自定义 GPTs 或其他 LLM 中**: 将其作为“系统指令 (System Instructions)”。\n3.  **核心精髓**: 这个工具的核心在于**侧边栏输入+右侧双模式预览（代码/渲染）**，以及针对**巴西葡语 SEO 的特定微调逻辑**，确保在 Prompt 中强调这些部分。",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963192,
+      "nanos": 222000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770963192,
+      "nanos": 385000000
+    }
+  },
+  {
+    "id": 6,
+    "author": "user",
+    "payload": {
+      "type": "text",
+      "text": "提示词给我全英文即可",
+      "files": [],
+      "fileUploads": [],
+      "cssBlocks": [],
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963306,
+      "nanos": 820000000
+    }
+  },
+  {
+    "id": 7,
+    "author": "model",
+    "payload": {
+      "type": "thinking",
+      "text": "**Defining the Core Need**\n\nI'm focusing now on precisely defining the core function of \"Filmora BR SEO Optimizer\". My aim is to create a prompt so concise, yet comprehensive, that it can replicate the tool's capabilities in any AI application generator. This means isolating the essential elements of the tool's behavior and the desired output format, all within a focused English prompt.\n\n\n",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963306,
+      "nanos": 820000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770963311,
+      "nanos": 803000000
+    }
+  },
+  {
+    "id": 8,
+    "author": "model",
+    "payload": {
+      "type": "text",
+      "text": "Here is the comprehensive English prompt designed to recreate the **Filmora BR SEO Optimizer** in any AI application generator.\n\n***\n\n### **System Prompt: Filmora BR SEO Optimizer**\n\n**Role:**\nAct as a Senior Frontend Engineer and SEO Content Strategist specialized in the Brazilian Portuguese (pt-BR) market. Your task is to build a high-performance SEO optimization tool for Filmora’s resource pages.\n\n**Core Objective:**\nCreate a web application that takes raw HTML content, specific modification requirements, and target keywords as input. It then uses the Google Gemini API to generate SEO assets (URL, Title, Meta Description) and a modified version of the HTML optimized for the Brazilian market.\n\n**Technical Stack:**\n- **Framework:** React with TypeScript.\n- **Styling:** Tailwind CSS.\n- **AI Engine:** `@google/genai` (using `gemini-3-flash-preview`).\n- **Icons/Fonts:** Inter Font, Heroicons (or inline SVGs).\n\n**UI/UX Specification:**\n1.  **Layout:** A split-pane layout (Side-by-side).\n    -   **Left Sidebar (Fixed Width, ~450px):** Dark Slate background (`#0f172a`). Contains inputs for:\n        -   `Original HTML` (Large Textarea, Monospace font).\n        -   `Modification Requirements` (Medium Textarea).\n        -   `Target Keywords` (Single-line Input).\n        -   `Optimize Button`: A large, gradient-filled button (Teal/Emerald) with loading states.\n    -   **Right Main Panel:** Deep Black background (`#020617`). Displays results:\n        -   **Metadata Cards:** Clean, bordered cards for URL, Browser Title, and Meta Description, each with a \"Copy\" button.\n        -   **Output Tabs:** A toggle between `MODIFIED CODE` (syntax-highlighted style) and `PREVIEW` (an iframe rendering the modified HTML).\n2.  **Aesthetics:** Modern \"SaaS\" look, dark mode only, subtle teal accents, custom thin scrollbars, and high-contrast text.\n\n**SEO Intelligence Logic (The AI \"Brain\"):**\nThe application must send a prompt to Gemini with these strict constraints:\n-   **Market:** Must use native Brazilian Portuguese (pt-BR) only.\n-   **URL:** Create a click-driven, lowercase, hyphen-separated SEO slug.\n-   **Browser Title:** Max 60 characters. Must include the main keyword. Do not include \"Filmora\" unless explicitly requested.\n-   **Meta Description:** Max 160 characters. Must end with a strong Call-to-Action (CTA).\n-   **HTML Optimization:** \n    -   Rewrite the `<h1>` to be compelling and keyword-rich.\n    -   Natural keyword insertion in `<h2>`, `<p>`, and `alt` attributes.\n    -   Fix Portuguese grammar (gender/number agreement).\n    -   **Code Integrity:** Absolutely DO NOT alter the div structure, class names, IDs, CSS styles, or external scripts. Only modify the text nodes and relevant SEO attributes.\n-   **Context Swapping:** If the requirement says \"Switch from Video to Image,\" rewrite all descriptive text to reflect the new media type.\n\n**Response Schema:**\nThe AI response from Gemini must be requested in JSON format:\n```json\n{\n  \"url\": \"string\",\n  \"browserTitle\": \"string\",\n  \"metaDescription\": \"string\",\n  \"modifiedHtml\": \"string\"\n}\n```\n\n**Implementation Details:**\n-   Implement a robust error handling system for API failures.\n-   Use `iframe` with `srcDoc` for the live preview to prevent CSS leakage from the main app.\n-   Ensure the UI is responsive, though optimized for a desktop \"workspace\" experience.\n-   Include a \"Copy to Clipboard\" utility function for all output fields.\n\n***\n\n### **Key Component Summary for Generator:**\n1.  **App.tsx**: State management for inputs and API orchestration.\n2.  **geminiService.ts**: Logic for `GoogleGenAI` initialization and prompt engineering.\n3.  **InputSection.tsx**: Form handling with Tailwind styling.\n4.  **ResultsSection.tsx**: Tabbed interface with code display and iframe preview.\n5.  **types.ts**: Interface definitions for the SEO payload.",
+      "cMarkNode": {}
+    },
+    "createdTimestamp": {
+      "seconds": 1770963311,
+      "nanos": 804000000
+    },
+    "doneTimestamp": {
+      "seconds": 1770963311,
+      "nanos": 912000000
+    }
+  }
+]

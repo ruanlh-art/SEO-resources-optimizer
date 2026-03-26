@@ -1,11 +1,31 @@
-<div align="center">
+# Filmora BR SEO Optimizer
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+An advanced SEO tool designed for the Brazilian Filmora market to optimize HTML content, generate metadata, and rewrite contextual elements based on target keywords and specific requirements.
 
-  <h1>Built with AI Studio</h2>
+## Deployment to Netlify
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+To deploy this project to Netlify, follow these steps:
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
+1.  **Push your code to a Git repository** (GitHub, GitLab, or Bitbucket).
+2.  **Connect your repository to Netlify**.
+3.  **Configure Build Settings**:
+    *   **Build command**: `npm run build`
+    *   **Publish directory**: `dist`
+4.  **Set Environment Variables**:
+    *   In the Netlify dashboard, go to **Site settings > Environment variables**.
+    *   Add `GEMINI_API_KEY` with your Google Gemini API key.
+5.  **Deploy**!
 
-</div>
+## Development
+
+To run the project locally:
+
+1.  Install dependencies:
+    ```bash
+    npm install
+    ```
+2.  Create a `.env` file with your `GEMINI_API_KEY`.
+3.  Start the development server:
+    ```bash
+    npm run dev
+    ```
